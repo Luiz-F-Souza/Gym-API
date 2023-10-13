@@ -30,7 +30,7 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
 - `npm run build`: Gerar a build para produção (out-dir = build).
 - `npm run start`: Rodar o servidor em produção.
 - `npm run test`: Rodar os testes em tempo real pelo terminal.
-- `npm run test:no-repeate`: Rodar os testes uma única vez pelo terminal.
+- `npm run test:no-repeat`: Rodar os testes uma única vez pelo terminal.
 - `npm run test:coverage`: Gerar coverage (média de cobertura) dos teste.
 - `npm run test:ui`: Rodar testes com interface do vitest.
 - `npm run db`: Rodar prisma studio.
