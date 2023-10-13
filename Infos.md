@@ -33,3 +33,14 @@
 
 1. Criar o useCase
 2. Criar o teste do useCase (sempre em mvp e dps ir refatorando o teste e os códigos)
+
+## Lista para me aprofundar mais
+
+- SOLID
+        - Single responsability Principle
+        - Open close Principle
+        - Liskov Substitution Principle
+        - Interface Segregation Principle
+        - Dependency Inversion Principle
+- TDD (Test Driven Development)
+        - Red, Green, Refactor
