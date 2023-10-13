@@ -3,10 +3,10 @@ import { GetUserProfileUseCase } from "./get-user-profile";
 import { InMemoryUsersRepository } from "@src/repositories/in-memory/users-repository";
 import { expect, it, beforeEach, describe } from "vitest";
 import { User } from "@prisma/client";
-import { UserRepositoryInterfce } from "@src/repositories/@interface/users-interface";
 
 
-let repository: UserRepositoryInterfce
+
+let repository: InMemoryUsersRepository
 let sut: GetUserProfileUseCase
 
 

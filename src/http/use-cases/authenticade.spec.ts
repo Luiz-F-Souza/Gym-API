@@ -1,4 +1,3 @@
-import { UserRepositoryInterfce } from '@src/repositories/@interface/users-interface'
 import { describe, expect, it, beforeEach } from 'vitest'
 import { InMemoryUsersRepository } from '@src/repositories/in-memory/users-repository'
 import { hash } from 'bcryptjs'
@@ -6,7 +5,7 @@ import { AuthenticateUseCase } from './authenticate'
 import { InvalidCretendialsError } from './errors/invalid-credentials-error'
 
 
-let repository: UserRepositoryInterfce
+let repository: InMemoryUsersRepository
 let sut: AuthenticateUseCase
 
 const fakeData = {

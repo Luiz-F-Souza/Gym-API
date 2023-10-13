@@ -5,6 +5,7 @@ type Props = {
   email: string, 
   password_hash: string
 }
+
 export interface UserRepositoryInterfce {
 
   create: ({ name, email, password_hash }: Props) => Promise<User | null>
