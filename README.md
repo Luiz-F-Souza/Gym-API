@@ -32,7 +32,13 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
 - `npm run test`: Rodar os testes em tempo real pelo terminal.
 - `npm run test:no-repeat`: Rodar os testes uma única vez pelo terminal.
 - `npm run test:coverage`: Gerar coverage (média de cobertura) dos teste.
+- `npm run test:unit`: Roda apenas testes unitários (dentro da pasta use-cases).
+- `npm run test:e2e`: Roda apenas testes end to end (dentro da pasta http/controllers).
+- `npm run test:unit:no-repeat`: Roda apenas testes unitários uma única vez (dentro da pasta use-cases).
+- `npm run test:e2e:no-repeat`: Roda apenas testes end to end uma única vez (dentro da pasta http/controllers).
 - `npm run test:ui`: Rodar testes com interface do vitest.
+- `npm run test:ui:unit`:Rodar testes unitários com interface do vitest.
+- `npm run test:ui:e2e`: Rodar testes e2e com interface do vitest.
 - `npm run db`: Rodar prisma studio.
 
 ***
@@ -43,7 +49,55 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
 
 #### GET
 
--
+- `/me` (Retorna dados básicos do usuário)
+
+    ```ts
+       // Retorna o usuário através de seu id enviado pelo jwt
+       // reply body
+        {
+
+            data: {
+                user: {
+                    id: string,
+                    name: string,
+                    email: string,
+                    created_at: string
+                }
+            }
+    
+        }
+
+    ```
+
+- `/gyms/search?query=searchTerm&page=1`
+
+    ```ts
+       // Retorna o usuário através de seu id enviado pelo jwt
+       // reply body
+        {
+
+            data: {
+                gyms: Gyms[]
+            }
+    
+        }
+
+    ```
+
+- `/gyms/nearby?latitude=userLatitude&longitude=userLongitude`
+
+    ```ts
+       // Retorna o usuário através de seu id enviado pelo jwt
+       // reply body
+        {
+
+            data: {
+                gyms: Gyms[]
+            }
+    
+        }
+
+    ```
 
 #### Post
 
@@ -56,18 +110,35 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
             email: string, (email válido)
             password: string (mínimo 06 caractéres)
         }
-
     ```
 
 - `/sessions` (Autenticar usuários)
 
     ```ts
-       // request body
+        // request body
         {
             email: string, (email válido)
             password: string (mínimo 06 caractéres)
         }
 
+        // Reply body
+        {
+            jwt:  string (token)
+        }
+    ```
+
+-- `/gyms` (Criar academia)
+
+   ```ts
+       // Enviar token junto na autenticação
+       // request body
+        {
+            title: string,
+            description: string | null,
+            phone: string | null,
+            latitude: number, // Latitude válida
+            longitude: number // Longitude válida
+        }
     ```
 
 ***
