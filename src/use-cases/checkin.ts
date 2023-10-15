@@ -1,8 +1,7 @@
-import { UserRepositoryInterfce } from "@src/repositories/@interface/users-interface";
 import { CheckIn, User } from "@prisma/client";
 import { CheckinRepositoryInterface } from "@src/repositories/@interface/checkin-interface";
 import { GymsRepositoryInterface } from "@src/repositories/@interface/gyms-interface";
-import { getDistanceBetweenCoordinates } from "./utils/get-distance-between-coordinates";
+import { getDistanceBetweenCoordinates } from "../utils/get-distance-between-coordinates";
 import { MaxDistanceError } from "./errors/max-distance-error";
 import { MaxCheckinsError } from "./errors/max-number-of-chekins-error";
 
@@ -18,7 +17,7 @@ interface ReplyType {
   checkin: CheckIn
 }
 
-export class ChekInUseCase {
+export class CheckInUseCase {
 
   constructor(
     private checkinRepository: CheckinRepositoryInterface,

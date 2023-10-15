@@ -1,14 +1,11 @@
-import { prisma } from "@src/lib/prisma"
-
-import { EmailAlreadyRegistered } from "./errors/register-errors"
-import { Gym, User } from "@prisma/client"
+import { Gym } from "@prisma/client"
 import { GymsRepositoryInterface } from "@src/repositories/@interface/gyms-interface"
 
 
 interface RequestInterface {
   title: string,
   description: string | null,
-  phone: string,
+  phone: string | null,
   latitude: number,
   longitude: number
 }

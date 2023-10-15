@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { ChekInUseCase } from "./chekin";
+import { CheckInUseCase } from "./checkin";
 import { InMemoryCheckinRepository } from "@src/repositories/in-memory/checkin-repository";
 import { InMemoryGymsRepository } from "@src/repositories/in-memory/gyms-repository";
 import { Decimal } from "@prisma/client/runtime/library";
@@ -9,7 +9,7 @@ import { MaxDistanceError } from "./errors/max-distance-error";
 
 let checkinRepository: InMemoryCheckinRepository
 let gymsRepository: InMemoryGymsRepository
-let sut: ChekInUseCase
+let sut: CheckInUseCase
 
 describe('Checkin useCase', () => {
 
@@ -25,7 +25,7 @@ describe('Checkin useCase', () => {
       longitude: new Decimal(-41.3969643),
       phone: ""
     })
-    sut = new ChekInUseCase(checkinRepository, gymsRepository)
+    sut = new CheckInUseCase(checkinRepository, gymsRepository)
 
     vi.useFakeTimers()
   })
