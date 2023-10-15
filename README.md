@@ -127,9 +127,9 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
         }
     ```
 
--- `/gyms` (Criar academia)
+- `/gyms` (Criar academia)
 
-   ```ts
+    ```ts
        // Enviar token junto na autenticação
        // request body
         {
