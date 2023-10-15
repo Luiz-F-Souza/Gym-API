@@ -45,8 +45,11 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
 
 ## Rotas
 
-### Users
 
+  app.get('/checkins/metrics', metrics)
+
+  app.post('/gyms/:gymId/checkins', create)
+  app.patch('/checkins/:checkinId/validate', validate)
 #### GET
 
 - `/me` (Retorna dados básicos do usuário)
@@ -93,6 +96,21 @@ Focando bastante na métodologia TDD, SOLID e CLEAN CODE. Bem como implementa CI
 
             data: {
                 gyms: Gyms[]
+            }
+    
+        }
+
+    ```
+
+- `/checkins/history` (Retorna checkins do usuário)
+
+    ```ts
+       // Retorna o usuário através de seu id enviado pelo jwt
+       // reply body
+        {
+
+            data: {
+                gyms: Checkins[]
             }
     
         }
