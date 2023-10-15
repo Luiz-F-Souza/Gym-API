@@ -9,8 +9,14 @@
     "start": "node build/server.js",
     "test": "vitest",
     "test:no-repeat": "vitest run",
+    "test:unit": "vitest --dir src/use-cases",
+    "test:e2e": "vitest --dir src/http",
+    "test:unit:no-repeat": "vitest run --dir src/use-cases",
+    "test:e2e:no-repeat": "vitest run --dir src/http",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
+    "test:ui:unit": "vitest --ui --dir src/use-cases",
+    "test:ui:e2e": "vitest --ui --dir src/http",
     "db": "prisma studio"
   },
   "keywords": [],
@@ -19,9 +25,11 @@
   "devDependencies": {
     "@types/bcryptjs": "2.4.4",
     "@types/node": "^20.8.4",
+    "@types/supertest": "2.0.14",
     "@vitest/coverage-v8": "0.34.6",
     "@vitest/ui": "0.34.6",
     "prisma": "5.4.2",
+    "supertest": "6.3.3",
     "tsup": "^7.2.0",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2",
@@ -29,6 +37,7 @@
     "vitest-tsconfig-paths": "3.4.1"
   },
   "dependencies": {
+    "@fastify/jwt": "7.2.2",
     "@prisma/client": "5.4.2",
     "bcryptjs": "2.4.3",
     "dayjs": "1.11.10",
